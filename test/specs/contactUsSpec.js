@@ -25,7 +25,7 @@ describe('contact us', function() {
         browser.click('#contact-us-send');
         browser.waitForVisible('.wpcf7-not-valid-tip', 5000);
         assert.equal(browser.getText('.wpcf7-not-valid-tip'), 'The field is required.');
-    })
+    });
     it('should ask the user to resubmit if the email field is left blank', function () {
         browser.url('http://www.qaworks.com/contact-us/');
         browser.setValue('input[name="your-name"]', 'j.Bloggs');
@@ -34,7 +34,7 @@ describe('contact us', function() {
         browser.click('#contact-us-send');
         browser.waitForVisible('.wpcf7-not-valid-tip', 5000);
         assert.equal(browser.getText('.wpcf7-not-valid-tip'), 'The field is required.');
-    })
+    });
     it('should ask the user to resubmit if the message field is left blank', function () {
         browser.url('http://www.qaworks.com/contact-us/');
         browser.setValue('input[name="your-name"]', 'j.Bloggs');
@@ -43,12 +43,11 @@ describe('contact us', function() {
         browser.click('#contact-us-send');
         browser.waitForVisible('.wpcf7-not-valid-tip', 5000);
         assert.equal(browser.getText('.wpcf7-not-valid-tip'), 'The field is required.');
-    })
+    });
     it('should ask the user to resubmit if required fields are blank', function () {
         browser.url('http://www.qaworks.com/contact-us/');
         browser.click('#contact-us-send');
         browser.waitForVisible('.wpcf7-response-output', 5000);
         assert.equal(browser.getText('.wpcf7-response-output'), '×\nPLEASE RE-SUBMIT WITH CORRECT INFORMATION.');
-    })
-
+    });
 });
